@@ -14,7 +14,9 @@ router.get('/', async (req, res) => {
           },
         ],
       });
-  
+      //Check that data is being pulled:
+        //res.status(200).json(postData);
+
       // Serialize data so the template can read it:
       const posts = postData.map((post) => post.get({ plain: true }));
   
@@ -27,3 +29,7 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+ 
+
+  module.exports = router;

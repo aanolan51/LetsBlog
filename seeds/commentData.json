@@ -1,0 +1,10 @@
+[{"comment": "test one",
+    "postID": 1,
+    "userID": 1
+
+},
+{"comment": "test two",
+    "postID": 1,
+    "userID": 2
+
+}]
