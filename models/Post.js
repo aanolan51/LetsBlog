@@ -15,7 +15,8 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post: {
+    post_content: {
+      //TEXT datatype has unimited length:
       type: DataTypes.TEXT,
       allowNull: false,
     },
