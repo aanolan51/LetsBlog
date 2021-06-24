@@ -1,0 +1,33 @@
+{
+  "name": "museum-paintings",
+  "version": "1.0.0",
+  "description": "1. https://sequelize.org/master/class/lib/data-types.js~TEXT.html\r 2. https://www.youtube.com/watch?v=1NrHkjlWVhM\r 3. https://developer.okta.com/blog/2019/05/31/simple-auth-express-fifteen-minutes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aanolan51/LetsBlog.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/aanolan51/LetsBlog/issues"
+  },
+  "homepage": "https://github.com/aanolan51/LetsBlog#readme"
+}
