@@ -3,6 +3,8 @@ const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 // DO we need to bring in the connection file? 
 
+
+//Route to get all blog posts and display with the user who created them:
 router.get('/', async (req, res) => {
     try {
       // Get all blog posts and JOIN with the username who wrote the post:
@@ -20,7 +22,7 @@ router.get('/', async (req, res) => {
       // Serialize data so the template can read it:
       const posts = postData.map((post) => post.get({ plain: true }));
   
-      // Pass serialized data and session flag into template
+      // Pass serialized data and session flag into the homepage handlebar template:
       res.render('homepage', { 
         posts, 
         logged_in: req.session.logged_in 
@@ -30,6 +32,43 @@ router.get('/', async (req, res) => {
     }
   });
 
+
+  router.get('/blogpost/:id', async (req, res) => {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+          },
+          {
+            model: Comment,
+          },
+        ],
+      });
+  
+      const post = postData.get({ plain: true });
+      // console.log(post);
+  
+      res.render('onePost', {
+        ...post,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+//Get request to check if logged in and if not render the login/sign-up page:
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    //if already logged in, go to the dashboard for the user:
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+});
  
 
   module.exports = router;

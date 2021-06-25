@@ -17,18 +17,6 @@ header {
   text-align: center;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
-aside {
-  flex: 0;
-  padding: 80px;
-  text-align: left;
-}
-
 nav {
   display: flex;
 }

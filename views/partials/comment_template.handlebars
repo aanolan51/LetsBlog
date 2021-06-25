@@ -1,0 +1,13 @@
+{{!-- The || array in the each statement cannot be the same as the column name being called from the model --}}
+{{#each comments as |comments|}}
+
+<div class="card">
+  <div class="card-body">
+
+    {{!-- Figure out how to get the user id to pull in the actual name of the user posting the comment: --}}
+    <h5 class="card-title">{{userID}}</h5>
+    <p class="card-text">{{comment}}</p>
+  </div>
+</div>
+
+{{/each}}
