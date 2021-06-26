@@ -59,7 +59,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-//Get request to check if logged in and if not render the login/sign-up page:
+//Get request to check if logged in and if not render the login page:
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -69,6 +69,18 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+//Get request to check if logged in, and if not render the signup page:
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    //if already logged in, go to the dashboard for the user:
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('signup');
 });
  
 
