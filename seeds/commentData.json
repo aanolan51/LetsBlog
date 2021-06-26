@@ -1,10 +1,20 @@
-[{"comment": "test one",
+[{"comment": "Comment test one",
     "postID": 1,
     "userID": 1
 
 },
-{"comment": "test two",
+{"comment": "Comment test two",
     "postID": 1,
     "userID": 2
+
+},
+{"comment": "Comment test three",
+    "postID": 2,
+    "userID": 1
+
+},
+{"comment": "Comment test four",
+    "postID": 2,
+    "userID": 3
 
 }]
