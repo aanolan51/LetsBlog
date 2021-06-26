@@ -42,6 +42,8 @@ router.get('/', async (req, res) => {
           },
           {
             model: Comment,
+            //Within the Comment model, include the user so that the comment's user can be accessed:
+            include: {model: User}
           },
         ],
       });
