@@ -45,14 +45,14 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-//Update a post at the path /api/posts/:
+//Update a post at the path /api/posts/:id:
 router.put('/:id', withAuth, async (req, res) => {
     // update a post by its `id` value
     try {
       const updatePost= await Post.update(
         {title: req.body.title,
         post_content: req.body.post_content},
-        {where: {id: req.params.id}}
+        {where: {id: req.params.id, user_id: req.session.user_id,}}
       );
       res.status(200).json(updatePost);
     } catch (err) {

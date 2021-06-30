@@ -1,1 +1,19 @@
-<h1>EDIT POST PAGE</h1> 
+
+<h3 class = "ml-5">EDIT POST:</h3>
+<form class = "col-8 ml-4 login">
+  <div class="form-group">
+    <label for="postTitle">title:</label>
+    <input class="form-input" type="text" id="postTitle" value="{{post.title}}"/>
+  </div>
+  <div class="form-group">
+    <label for="postContent">content:</label>
+    <textarea class="form-input" rows ="4" id="postContent">{{post.post_content}}</textarea>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info editButton" data-id="{{post.id}}" type="submit">SAVE</button>
+  </div>
+</form>
+
+
+{{!-- Bring in the edit post javascript file to pull the form data to send to the back-end: --}}
+<script src="/js/editpost.js"></script>
