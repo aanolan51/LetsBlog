@@ -18,7 +18,7 @@
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center m-4">
         {{#if logged_in}}
-        <a class="btn btn-sm btn-primary m-4" href="/js/logout.js">Log Out</a>
+        <a class="btn btn-sm btn-primary m-4" id = "logout" href="/js/logout.js">Log Out</a>
         <a class="btn btn-sm btn-outline-secondary m-2" href="/">HOME</a>
         {{else}}
         <a class="btn btn-sm btn-primary m-2" href="/login">Login</a>
@@ -42,7 +42,7 @@
   </main>
     
   {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 

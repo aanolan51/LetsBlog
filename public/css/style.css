@@ -12,6 +12,10 @@ a {
   text-decoration: none;
 }
 
+a:link{
+  text-decoration: none;
+}
+
 header {
   padding: 40px;
   text-align: center;

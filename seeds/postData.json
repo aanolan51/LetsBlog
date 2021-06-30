@@ -1,12 +1,17 @@
-[{"title": "test one",
+[{"title": "post one",
     "post_content": "aksdfhaklsdfhalksdf",
     "post_date": "06/24/2021",
     "user_id": 1
 
 },
-{"title": "test two",
+{"title": "post two",
     "post_content": "kdfkgnode skfgjkdf ksdkfksj",
     "post_date": "06/24/2021",
     "user_id": 2
 
+},
+{"title": "post three",
+    "post_content": "kdfkgnode skfgjkdf ksdkfksj",
+    "post_date": "06/30/2021",
+    "user_id": 2
 }]

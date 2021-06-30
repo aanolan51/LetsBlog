@@ -9,7 +9,8 @@ const homepage = require('./homeRoutes');
 
 //Use the the routes and set the path:
 router.use('/api', apiRoutes);
-router.use('/dashboard', dashboard);
+
 router.use('/', homepage);
+router.use('/dashboard', dashboard);
 
 module.exports = router;
