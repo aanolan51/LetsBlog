@@ -1,6 +1,7 @@
 
 <h3 class = "ml-5">EDIT POST:</h3>
-<form class = "col-8 ml-4 login">
+{{!-- Need to have class identifier on the form to handle the submission. The data-attribute also needs to be on the main form: --}}
+<form class = "col-8 ml-4 editButton" data-id="{{post.id}}">
   <div class="form-group">
     <label for="postTitle">title:</label>
     <input class="form-input" type="text" id="postTitle" value="{{post.title}}"/>
@@ -10,7 +11,7 @@
     <textarea class="form-input" rows ="4" id="postContent">{{post.post_content}}</textarea>
   </div>
   <div class="form-group">
-    <button class="btn btn-info editButton" data-id="{{post.id}}" type="submit">SAVE</button>
+    <button class="btn btn-info"  type="submit">SAVE</button>
   </div>
 </form>
 

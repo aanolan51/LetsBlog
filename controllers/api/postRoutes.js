@@ -45,8 +45,8 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-//Update a post at the path /api/posts/:id:
-router.put('/:id', withAuth, async (req, res) => {
+//Update a post at the path /api/posts/editpost/:id:
+router.put('/editpost/:id', withAuth, async (req, res) => {
     // update a post by its `id` value
     try {
       const updatePost= await Post.update(
