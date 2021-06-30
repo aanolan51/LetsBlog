@@ -25,33 +25,5 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
 
-  //Include an edit button for one post. When button clicked, bring to edit page. Find the one post by id in order to display content in the form:
-  //Use path /dashboard/:id:
-  router.get('/:id', async (req, res) => {
-    try {
-      const postData = await Post.findByPk(req.params.id, {
-        include: [
-          {
-            model: User,
-          },
-          {
-            model: Comment,
-            //Within the Comment model, include the user so that the comment's user can be accessed:
-            include: {model: User}
-          },
-        ],
-      });
   
-      const post = postData.get({ plain: true });
-      // console.log(post);
-  
-      res.render('editPost', {
-        post,
-        logged_in: req.session.logged_in
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
   module.exports = router;
