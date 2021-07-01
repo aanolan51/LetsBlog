@@ -82,6 +82,18 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
+
+//Get request to make a new post and if not render the login page:
+router.get('/createpost', async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    //if already logged in, go to the newPost for the user:
+    res.render('newPost');
+    return;
+  }
+
+  res.render('login');
+});
  
 
   module.exports = router;

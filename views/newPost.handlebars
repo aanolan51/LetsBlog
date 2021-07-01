@@ -1,0 +1,19 @@
+<h3 class = "ml-5">NEW POST:</h3>
+{{!-- Need to have class identifier on the form to handle the submission. The data-attribute also needs to be on the main form: --}}
+<form class = "col-8 ml-4 newForm" >
+  <div class="form-group">
+    <label for="newTitle">title:</label>
+    <input class="form-input" type="text" id="newTitle"/>
+  </div>
+  <div class="form-group">
+    <label for="newContent">content:</label>
+    <textarea class="form-input" rows ="4" id="newContent"></textarea>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info"  type="submit">CREATE POST</button>
+  </div>
+</form>
+
+
+{{!-- Bring in the edit post javascript file to pull the form data to send to the back-end: --}}
+<script src="/js/newpost.js"></script>

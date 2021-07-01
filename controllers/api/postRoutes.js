@@ -31,11 +31,40 @@ const withAuth = require('../../utils/auth');
     }
   });
 
-// Create a new post at path /api/posts:
-router.post('/', withAuth, async (req, res) => {
+//Get request to make a new post and if not render the login page:
+router.get('/createpost', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+        {
+          model: Comment,
+          //Within the Comment model, include the user so that the comment's user can be accessed:
+          include: {model: User}
+        },
+      ],
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render('newPost', {
+      posts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+ 
+
+// Create a new post at path /api/posts/createpost:
+router.post('/createpost', withAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
-        ...req.body,
+        title:req.body.title,
+        post_content: req.body.post_content,
         user_id: req.session.user_id,
       });
   
