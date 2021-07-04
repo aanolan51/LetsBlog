@@ -1,14 +1,29 @@
 {{!-- Display one post with the post partial template: --}}
 {{> post-template}}
-
+{{!-- Display all comments previously added to the post using the comments template: --}}
+{{> comment_template }}
 
 {{!-- Allow user to add comments for the post if logged in: --}}
 {{!-- {{#if logged_in}}
+<div class="card m-4">
+  <form class="card-body addComment" data-id={{id}}>
+       <div class="form-group">
+            <label for="comment_content">comment:</label>
+            <input class="form-input" type="text" id="comment_content"/>
+        </div>
 
+        <div class="form-group">
+            <button class="btn btn-info"  type="submit">ENTER</button>
+        </div>
+  </form>
+</div>
+{{/if}}
+
+
+
+{{#if logged_in}}
+<script src="/js/addcomment.js"></script>
 {{/if}} --}}
-
-{{!-- Display all comments previously added to the post using the comments template: --}}
-{{> comment_template}}
 
 
 

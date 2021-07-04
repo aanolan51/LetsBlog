@@ -25,31 +25,6 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
 
-  //Get request to make a new post and render new post page:
-router.get('/createpost/', withAuth, async (req, res) => {
-  try {
-    const postData = await Post.findAll(req.params.id, {
-      include: [
-        {
-          model: User,
-        },
-        {
-          model: Comment,
-          //Within the Comment model, include the user so that the comment's user can be accessed:
-          include: {model: User}
-        },
-      ],
-    });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
-
-    res.render('newPost', {
-      posts,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
   module.exports = router;

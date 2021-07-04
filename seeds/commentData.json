@@ -1,20 +1,20 @@
 [{"comment": "Comment test one",
-    "postID": 1,
-    "userID": 1
+    "postid": 1,
+    "userid": 1
 
 },
 {"comment": "Comment test two",
-    "postID": 1,
-    "userID": 2
+    "postid": 1,
+    "userid": 2
 
 },
 {"comment": "Comment test three",
-    "postID": 2,
-    "userID": 1
+    "postid": 2,
+    "userid": 1
 
 },
 {"comment": "Comment test four",
-    "postID": 2,
-    "userID": 3
+    "postid": 2,
+    "userid": 3
 
 }]

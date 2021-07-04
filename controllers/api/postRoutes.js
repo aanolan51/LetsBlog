@@ -32,16 +32,27 @@ const withAuth = require('../../utils/auth');
   });
 
 
-// Create a new post at path /api/posts:
-router.post('/', withAuth, async (req, res) => {
-  console.log(req.session)
+  //Get request to make a new post and render new post page:
+router.get('/createpost', (req, res) => {
+    if (req.session.logged_in) {
+      //if already logged in, go to the new post for the user:
+      res.render('newPost', {logged_in: req.session.logged_in});
+    }
+});
+
+// Create a new post at path /api/posts/createpost:
+router.post('/createpost', withAuth, async (req, res) => {
+  // console.log("IN POST FUNCTION")
+  // console.log(req.body);
+  // console.log(req.session.user_id);
     try {
-      const newPost = await Post.create({
+      console.log("INSIDE TRY FUNCTION")
+      const createdpost = await Post.create({
         ...req.body,
-        user_id: req.session.user_id});
-        
-        console.log("newPost")
-      res.status(200).json(newPost);
+        //Need to stringify the user id in order to take it as an argument in the create:
+        user_id: JSON.stringify(req.session.user_id)});
+
+      res.status(200).json(createdpost);
     } catch (err) {
       res.status(400).json(err);
     }
