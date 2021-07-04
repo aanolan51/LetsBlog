@@ -22,7 +22,10 @@ const PORT = process.env.PORT || 3001;
 //Configuring a session object and then setting where it is stored using the SequelizeStore variable we created and the sequelize database:
 const sess = {
   secret: 'secret',
-  cookie: {},
+  cookie: {
+    //session will expire - 10 minutes times 60 seconds in a minute * 1000 ms
+    expires: 10 * 60 * 1000
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
