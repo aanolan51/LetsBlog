@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
+            attributes: {exclude: ['password']},
           },
         ],
       });
@@ -38,6 +39,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
+            attributes: {exclude: ['password']},
           },
           {
             model: Comment,
@@ -48,7 +50,7 @@ router.get('/', async (req, res) => {
       });
   
       const post = postData.get({ plain: true });
-      console.log(post);
+      // console.log(post);
   
       res.render('onePost', {
         ...post,

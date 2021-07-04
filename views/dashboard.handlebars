@@ -9,18 +9,11 @@
         {{!-- Build a page to edit the post. Will need a reference to bring up this post as a get request in the api post routes,
         a handlebars page for the edit form, a javascript page to handle to form submission which will then connect to the postRoute api update --}}
         <a href="/api/posts/editpost/{{post.id}}" class="btn btn-primary">EDIT</a>
-        {{!-- create an attribute that is equal to the post id to use when deleting the post via the javascript file: --}}
-        <button class="btn btn-danger deleteButton" data-id="{{post.id}}" type="button">DELETE</button>
+    
         {{/each}}
     </div>   
 </div>
 
 
-
-
-
-
-{{!-- Javascript references to handle delete button: --}}
-<script src="/js/deletePost.js"></script>
 
 
