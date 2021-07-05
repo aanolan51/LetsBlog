@@ -54,3 +54,4 @@ Pull requests will not be accepted without prior discussion, thank you.
 3. https://developer.okta.com/blog/2019/05/31/simple-auth-express-fifteen-minutes
 4. https://oprearocks.medium.com/what-do-the-three-dots-mean-in-javascript-bc5749439c9a
 5. https://handlebarsjs.com/guide/builtin-helpers.html#unless
+6. https://medium.com/@jamesjsewell/heroku-and-sequelize-b0b1e9a51890
