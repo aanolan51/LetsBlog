@@ -6,22 +6,7 @@ let sequelize;
 //Set an if statement to either connect to a heroku database or a local database:
 if (process.env.DATABASE_URL) {
   // the application is executed on Heroku ... use the postgres database
-  sequelize = new Sequelize(process.env.DATABASE_URL,
-    {
-      "development": {
-        "database": "projectdb",
-        "host": "127.0.0.1",
-        "dialect": "postgres"
-      },
-      "test": {
-        "database": "projectdb",
-        "host": "127.0.0.1",
-        "dialect": "postgres"
-      },
-      "production": {
-        "use_env_variable": "DATABASE_URL"
-      }
-  });
+  sequelize = new Sequelize(process.env.DATABASE_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
