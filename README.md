@@ -55,3 +55,5 @@ Pull requests will not be accepted without prior discussion, thank you.
 4. https://oprearocks.medium.com/what-do-the-three-dots-mean-in-javascript-bc5749439c9a
 5. https://handlebarsjs.com/guide/builtin-helpers.html#unless
 6. https://medium.com/@jamesjsewell/heroku-and-sequelize-b0b1e9a51890
+7. https://devcenter.heroku.com/articles/config-vars#set-a-config-var
+8. https://gawdiseattle.gitbook.io/wdi/00-config-deployment/deploy-node
