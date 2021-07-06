@@ -24,10 +24,18 @@ The Let's Blog application is a full-stack app that allows a user to create an a
 
 Make sure that you enter your mysql username and password in the .env file to link to your mysql database if using in the browser.
 
+
 ## Usage
 New users, sign-up with a username, email, and password. Returning users login with your username and password. Once logged in, you can comment on any post. Navigate to the dashboard to create a new post. Your dashboard will display every post you have created, click edit in order to change the post or delete the post. Click on the home button to view all posts created by all users. Logout when you are finished.
 
 To stop at any point, type in ***ctrl c*** in the terminal and hit enter if using the browser.
+
+![homepage](public/homepage.png)
+![onepost](public/loggedin.png)
+![dashboard](public/onepost.png)
+
+Heroku App Link:
+https://letstech.herokuapp.com/
 
 ## License
  ![badge](https://img.shields.io/badge/license-mit-blue?style=flat-square)<br>
