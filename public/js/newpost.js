@@ -5,13 +5,12 @@ const newPostFunc = async (event) => {
     const post_content = document.querySelector('#newContent').value.trim(); 
     
     //Working:
-    console.log("--------------INSIDE NEW POST-----------------");
-    console.log(title);
-    console.log(post_content);
+    // console.log("--------------INSIDE NEW POST-----------------");
+    // console.log(title);
+    // console.log(post_content);
 
-    //Not working:
     if(title && post_content){
-        console.log("INSIDE FRONT END FETCH")
+        // console.log("INSIDE FRONT END FETCH")
         const response = await fetch("/api/posts/createpost", {
             method: 'POST',
             body: JSON.stringify({title, post_content}),
@@ -20,7 +19,7 @@ const newPostFunc = async (event) => {
             },
         });
     
-        console.log(response);
+        // console.log(response);
       
         if (response.ok) {
             document.location.replace('/dashboard');
